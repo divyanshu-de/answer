@@ -42,3 +42,29 @@ def generate_status (BP_level):
 string_default = input()
 
 print(generate_status(string_default))
+
+
+
+""""
+Q5 Flat Discount
+"""
+
+
+def calculate_discount(input_string):
+  [houseNumber, flatType] = input_string.split(":")
+  isEven = sum(list(map(int, houseNumber))) % 2 == 0
+  if flatType == "2BHK":
+    if isEven:
+      return 3700000 * 0.05
+    return 3900000 * 0.04
+  elif flatType == "3BHK":
+    if isEven:
+      return round(4900000 * 0.07, 1)
+    return 5100000 * 0.08
+  else:
+    return "Invalid Input"
+  
+string_default = input()
+
+print(calculate_discount(string_default))
+
